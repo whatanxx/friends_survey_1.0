@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Gabriel Weiss' Friends Font";
+    background-color: darkcyan;
+}
+.menu{
+    width: 800px;
+    margin: 20px auto 30px;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.menu ul li{
+    font-size: 24px;
+}
+
+a:link, a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #fff;
+
+}
+
+#logo {
+    position: relative;
+
+    top: 20px;
+    display: block;
+    margin: 0 auto 20px;
+    width: 250px;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+    background-color: beige;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.answer {
+    display: flex;
+    margin-left: 18px;
+    gap: 10px;
+}
+
+.answer:last-child {
+    justify-content: center;
+}
+
+#send {
+    background-color: aquamarine;
+    border: 0;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#send:hover {
+    cursor: pointer;
+}
+
+#points {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 22px;
+}
