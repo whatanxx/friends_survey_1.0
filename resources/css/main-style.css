@@ -5,19 +5,23 @@
 }
 
 body {
+    font-size: 24px;
     font-family: "Gabriel Weiss' Friends Font", serif;
     background-color: darkcyan;
 }
-.menu{
+
+.menu {
     width: 400px;
     margin: 30px auto 40px;
 }
-.menu ul{
+
+.menu ul {
     display: flex;
     list-style: none;
     justify-content: space-between;
 }
-.menu ul li{
+
+.menu ul li {
     font-size: 24px;
 }
 
@@ -48,7 +52,7 @@ a:hover, a:active {
     border-radius: 5px;
 }
 
-.questions{
+.questions {
     overflow-y: scroll;
     height: 640px;
 }
@@ -57,9 +61,17 @@ input {
     margin-bottom: 10px;
 }
 
-label {
+label{
     display: block;
+}
+
+.question label {
+
     margin-bottom: 10px;
+}
+
+#name {
+    margin-bottom: 20px;
 }
 
 .answer {
@@ -68,18 +80,30 @@ label {
     gap: 10px;
 }
 
-.answer:last-child {
+/*.answer:last-child {*/
+/*    justify-content: center;*/
+/*}*/
+
+.question .answer:last-child {
+    margin-bottom: 30px;
+    justify-self: flex-start;
+}
+
+.send{
+    display: flex;
     justify-content: center;
 }
 
-#send {
+.send button{
+    font-size: 22px;
     background-color: aquamarine;
     border: 0;
-    padding: 5px;
+    padding: 5px 15px;
     border-radius: 3px;
+
 }
 
-#send:hover {
+.send button:hover {
     cursor: pointer;
 }
 
@@ -87,5 +111,5 @@ label {
     display: flex;
     justify-content: center;
     color: red;
-    font-size: 22px;
+
 }
