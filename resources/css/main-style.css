@@ -5,12 +5,12 @@
 }
 
 body {
-    font-family: "Gabriel Weiss' Friends Font";
+    font-family: "Gabriel Weiss' Friends Font", serif;
     background-color: darkcyan;
 }
 .menu{
-    width: 800px;
-    margin: 20px auto 30px;
+    width: 400px;
+    margin: 30px auto 40px;
 }
 .menu ul{
     display: flex;
@@ -46,6 +46,11 @@ a:hover, a:active {
     background-color: beige;
     padding: 10px 15px;
     border-radius: 5px;
+}
+
+.questions{
+    overflow-y: scroll;
+    height: 640px;
 }
 
 input {

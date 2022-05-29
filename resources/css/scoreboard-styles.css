@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Gabriel Weiss' Friends Font", serif;
+    background-color: darkcyan;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+
+}
+
+.menu {
+    width: 400px;
+    margin: 30px auto 60px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.menu ul li {
+    font-size: 24px;
+}
+
+a:link, a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #fff;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    border-style: hidden;
+    /*background-color: beige;*/
+    box-shadow: 0 0 0 3px #fff;
+    border-radius: 5px;
+}
+table th{
+    font-size: 22px;
+    padding: 32px 64px;
+}
+table td{
+    font-size: 18px;
+    padding: 32px 32px;
+}
+table th, td {
+
+    background-color: beige;
+    border: 1px beige solid;
+
+
+
+    text-align: center;
+}
