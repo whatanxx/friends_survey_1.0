@@ -23,19 +23,45 @@ $q = $mysql->query("SELECT name, points FROM scores ORDER BY points DESC");
 </nav>
 <div class="wrapper">
 
-        <table>
-            <tr>
-                <th>Place</th>
-                <th>Name</th>
-                <th>Points</th>
-                <th>Country</th>
-            </tr>
-            <?php
-            while ($row = $q->fetch_row()) {
-                echo "<tr><td>PLACE</td><td>$row[0]</td><td>$row[1]</td><td>COUNTRY</td></tr>";
+    <table>
+        <tr>
+            <th>Place</th>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Country</th>
+        </tr>
+        <?php
+        $rows = $q->fetch_all();
+        $scores = array();
+        $names = array();
+        foreach ($rows as $row) {
+            array_push($names, $row[0]);
+            array_push($scores, $row[1]);
+        }
+        $scoreboard = array();
+        for ($i = 0; $i < count($scores); $i++) {
+            $scoreboard[$names[$i]] = $scores[$i];
+        }
+        arsort($scoreboard);
+
+        $names = array_keys($scoreboard);
+        $scores = array_values($scoreboard);
+        $first_score = $scoreboard[array_key_first($scoreboard)];
+        $place = 1;
+        $first_name = array_key_first($scoreboard);
+        echo "<tr><td>$place</td><td>$first_name</td><td>$first_score</td><td>🇵🇱</td></tr>";
+        for ($j = 1; $j < count($scoreboard); $j++) {
+            if ($scores[$j] == $first_score) {
+                echo "<tr><td>$place</td><td>$names[$j]</td><td>$scores[$j]</td><td>🇵🇱</td></tr>";
+            } else {
+                $place++;
+                $first_score = $scores[$j];
+                echo "<tr><td>$place</td><td>$names[$j]</td><td>$scores[$j]</td><td>🇵🇱</td></tr>";
+
             }
-            ?>
-        </table>
+        }
+        ?>
+    </table>
 
 </div>
 </body>
