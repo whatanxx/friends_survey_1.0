@@ -3,7 +3,7 @@ TO DO
 1) Rewrite CSS FROM DIV LABEL NAME
 2) MARGIN FOR QUESTION AND FLAG PICKER
 3) RESTRUCTURE TABLE
-4) ADD GETTING FLAGS FROM DB 
+4) ADD GETTING FLAGS FROM DB
 
 -->
 
@@ -38,15 +38,15 @@ include "flags.php";
             <label for="name">Your name:</label>
             <div style="display: flex; justify-content: space-between">
             <input type="text" name="name" autocomplete="name" id="name" required/>
-            <?php $flags_file = fopen("../data/index.json", "r");
-            $json_string = fread($flags_file, filesize("../data/index.json"));
+            <?php $flags_file = fopen("../countries/index.json", "r");
+            $json_string = fread($flags_file, filesize("../countries/index.json"));
             $json_flags = json_decode($json_string);
             fclose($flags_file);
 ?>
             <select size="1" style='width: 160px'>
                 <?php
                 for ($i = 0; $i < count($json_flags); $i++) {
-                    echo "<option>{$json_flags[$i]->name} {$json_flags[$i]->emoji}</option>";
+                    echo "<option>{$json_flags[$i]->name} <img src='{$json_flags[$i]->image}' alt=''/></option>";
                 }
 
                 ?>
